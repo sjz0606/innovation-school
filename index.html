@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Innovation English School: IELTS va ingliz tili, Toshkent</title>
+<meta name="description" content="Toshkentdagi ingliz tili va IELTS markazi. Har guruhda ikki ustoz, har oy progress test. IELTS 7.0 olmasangiz, to'lov qaytariladi.">
+<meta name="theme-color" content="#ffffff">
+<!-- Arizalar serveri: masalan https://api.innovationschool.uz/lead (bo'sh = server ulanmagan) -->
+<meta name="lead-endpoint" content="">
+<meta property="og:title" content="Innovation English School">
+<meta property="og:description" content="Har guruhda 2 ustoz, Oxford University Press dasturi, bepul Mock. 7.0 olmasangiz, to'lov qaytariladi.">
+<meta property="og:image" content="media/v/dars.jpg">
+<link rel="icon" href="media/logo.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geologica:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=8">
+</head>
+<body>
+
+<a class="skip" href="#main">Asosiy qismga o'tish</a>
+
+<header class="top" id="nav">
+  <div class="wrap top__in">
+    <a href="#main" class="top__logo" aria-label="Innovation English School, bosh sahifa">
+      <img class="logo-w" src="media/logo-white.webp" alt="Innovation English School" width="137" height="36">
+      <img class="logo-g" src="media/logo.webp" alt="" width="137" height="36">
+    </a>
+    <nav class="top__links" aria-label="Bo'limlar">
+      <a href="#natijalar" data-i18n="nav.results">Natijalar</a>
+      <a href="#nega" data-i18n="nav.how">Qanday o'qitamiz</a>
+      <a href="#reja" data-i18n="nav.plan">Kurs tanlash</a>
+      <a href="#narxlar" data-i18n="nav.price">Narxlar</a>
+      <a href="#ustozlar" data-i18n="nav.teachers">Ustozlar</a>
+      <a href="#filiallar" data-i18n="nav.branches">Filiallar</a>
+    </nav>
+    <div class="top__end">
+      <div class="lang" role="group" aria-label="Til / Язык">
+        <button type="button" data-lang="uz" aria-pressed="true">UZ</button>
+        <button type="button" data-lang="ru" aria-pressed="false">RU</button>
+      </div>
+      <a class="top__tel" href="tel:+998785550050">78 555 00 50</a>
+      <a class="btn btn--ink btn--sm" href="#ariza" data-i18n="cta.trial">Sinov darsiga yozilish</a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero__num" aria-hidden="true">
+    <video src="media/v/hero.mp4" poster="media/v/dars.jpg" autoplay muted loop playsinline></video>
+    <div class="hero__mask"><span>7.0+</span></div>
+  </div>
+  <div class="wrap hero__row">
+    <h1 data-i18n="hero.h1">IELTS'dan 7.0 va undan yuqori. Olmasangiz, to'lovni qaytaramiz.</h1>
+    <div class="hero__side">
+      <p class="hero__lead" data-i18n="hero.lead">Toshkentdagi ingliz tili markazi. Har guruhda ikki ustoz, Oxford University Press darsliklari, har oy progress test va bepul Mock imtihon.</p>
+      <div class="hero__cta">
+        <a class="btn btn--yellow" href="#ariza" data-i18n="cta.trial2">Bepul sinov darsiga yozilish</a>
+        <button type="button" class="link" data-video="dars" data-i18n="hero.sound">Darsni ovoz bilan ko'rish</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NATIJALAR: ball varag'i -->
+<section class="sec results" id="natijalar">
+  <div class="wrap">
+    <header class="sec__head">
+      <h2 data-i18n="res.title">O'quvchilarimizning IELTS natijalari</h2>
+      <p data-i18n="res.lead">Ism ustiga bossangiz, asl Test Report Form ochiladi. Oxirgi qatorga o'z ballaringizni kiriting: umumiy ball rasmiy IELTS qoidasi bo'yicha hisoblanadi.</p>
+    </header>
+
+    <div class="sheet-wrap">
+      <table class="sheet">
+        <thead>
+          <tr>
+            <th scope="col" class="sheet__name" data-i18n="res.student">O'quvchi</th>
+            <th scope="col"><span class="full">Listening</span><span class="short" aria-hidden="true">L</span></th>
+            <th scope="col"><span class="full">Reading</span><span class="short" aria-hidden="true">R</span></th>
+            <th scope="col"><span class="full">Writing</span><span class="short" aria-hidden="true">W</span></th>
+            <th scope="col"><span class="full">Speaking</span><span class="short" aria-hidden="true">S</span></th>
+            <th scope="col" class="sheet__ov">Overall</th>
+          </tr>
+        </thead>
+        <tbody id="resBody"></tbody>
+        <tfoot>
+          <tr class="sheet__avg" id="resAvg"></tr>
+          <tr class="sheet__you" id="kalkulyator">
+            <th scope="row" class="sheet__name"><span data-i18n="res.you">Sizning balingiz</span><small id="calcMsg"></small></th>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+    <p class="note" data-i18n="res.note">Bu 10 natijada eng past ko'nikma Writing. Shuning uchun yordamchi ustoz har bir esseni alohida tekshirib, izoh yozib beradi.</p>
+  </div>
+</section>
+
+<!-- VIDEO TASMA -->
+<section class="band" aria-label="Dars">
+  <div class="wrap band__in">
+    <div>
+      <p class="band__big" data-i18n="band.big">Har bir guruhda ikki ustoz.</p>
+      <p class="band__small" data-i18n="band.small">Biri darsni o'tadi, ikkinchisi siz bilan alohida speaking va writing qiladi.</p>
+    </div>
+    <div class="band__vids" aria-hidden="true">
+      <video src="media/v/loop-a.mp4" poster="media/v/loop-a.jpg" autoplay muted loop playsinline></video>
+      <video src="media/v/loop-b.mp4" poster="media/v/loop-b.jpg" autoplay muted loop playsinline></video>
+    </div>
+  </div>
+</section>
+
+<!-- QANDAY O'QITAMIZ -->
+<section class="sec how" id="nega">
+  <div class="wrap how__grid">
+    <div class="how__text">
+      <h2 data-i18n="how.title">Qanday o'qitamiz</h2>
+      <dl class="how__list">
+        <div><dt data-i18n="how.t2">Kafolat shartnomada</dt><dd data-i18n="how.d2">IELTS kursidan keyin imtihonda 7.0 dan past olsangiz, to'lov qaytariladi. Davomat va uy vazifasi shartlari shartnomada yozilgan.</dd></div>
+        <div><dt data-i18n="how.t3">Har oy o'lchov</dt><dd data-i18n="how.d3">Progress test va bepul Mock imtihon. Qayerda turganingizni oyma-oy raqamda ko'rasiz.</dd></div>
+        <div><dt data-i18n="how.t4">Oxford darsliklari</dt><dd data-i18n="how.d4">Student Book, Workbook, Vocabulary va Tests. Har bir darajada 1000 dan ortiq yangi so'z.</dd></div>
+        <div><dt data-i18n="how.t5">Yakshanba</dt><dd data-i18n="how.d5">Dars yo'q kuni tadbirlar va erkin speaking practice.</dd></div>
+      </dl>
+    </div>
+    <button type="button" class="how__video" data-video="kafolat">
+      <img src="media/v/kafolat.jpg" alt="" loading="lazy">
+      <span data-i18n="how.video">Kafolat haqida, 30 soniya</span>
+    </button>
+  </div>
+</section>
+
+<!-- REJA -->
+<section class="sec plan" id="reja">
+  <div class="wrap">
+    <header class="sec__head">
+      <h2 data-i18n="plan.title">Qaysi kurs, qancha vaqt va qancha turadi?</h2>
+      <p data-i18n="plan.lead">Uchta savolga javob bering, yo'lingizni oyma-oy hisoblab beramiz. Darajangizni bilmasangiz, 3 daqiqalik testdan o'ting.</p>
+    </header>
+
+    <div class="plan__grid">
+      <form class="plan__form" id="planForm" onsubmit="return false">
+        <fieldset>
+          <legend data-i18n="plan.q1">Maqsadingiz</legend>
+          <div class="opts">
+            <label><input type="radio" name="goal" value="ielts" checked><span data-i18n="goal.ielts">IELTS 7.0+</span></label>
+            <label><input type="radio" name="goal" value="general"><span data-i18n="goal.general">Erkin gapirish</span></label>
+            <label><input type="radio" name="goal" value="individual"><span data-i18n="goal.individual">Yakka tartibda</span></label>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend data-i18n="plan.q2">Hozirgi darajangiz</legend>
+          <div class="opts" id="levelChips">
+            <label><input type="radio" name="level" value="0" checked><span>Beginner</span></label>
+            <label><input type="radio" name="level" value="1"><span>Elementary</span></label>
+            <label><input type="radio" name="level" value="2"><span>Pre-Intermediate</span></label>
+            <label><input type="radio" name="level" value="3"><span>Intermediate</span></label>
+            <label><input type="radio" name="level" value="4"><span>Upper-Intermediate</span></label>
+          </div>
+          <button type="button" class="link link--sm plan__test" id="openTest" data-i18n="plan.test">Darajamni bilmayman: 12 savollik test</button>
+        </fieldset>
+
+        <fieldset id="paceSet">
+          <legend data-i18n="plan.q3">Tezlik</legend>
+          <div class="opts">
+            <label><input type="radio" name="pace" value="normal" checked><span data-i18n="pace.normal">Odatiy: oyiga 13–14 dars</span></label>
+            <label><input type="radio" name="pace" value="fast"><span data-i18n="pace.fast">Intensiv: oyiga 24–26 dars</span></label>
+          </div>
+        </fieldset>
+      </form>
+
+      <div class="plan__out" id="planOut" aria-live="polite">
+        <dl class="plan__sum">
+          <div><dt data-i18n="plan.months">Muddat</dt><dd id="pMonths">—</dd></div>
+          <div><dt data-i18n="plan.total">Jami to'lov</dt><dd id="pTotal">—</dd></div>
+          <div><dt data-i18n="plan.finish">Taxminiy yakun</dt><dd id="pFinish">—</dd></div>
+        </dl>
+        <ol class="route" id="pRoute"></ol>
+        <p class="plan__note" id="pNote"></p>
+        <a class="btn btn--yellow" href="#ariza" id="pCta" data-i18n="plan.cta">Shu reja bilan sinov darsiga yozilish</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NARXLAR -->
+<section class="sec prices" id="narxlar">
+  <div class="wrap">
+    <header class="sec__head">
+      <h2 data-i18n="price.title">Narxlar</h2>
+      <p data-i18n="price.lead">To'lov oyma-oy. Har bir kursda ikki ustoz va yakunida sertifikat.</p>
+    </header>
+    <div class="ptable" id="priceList"></div>
+    <p class="note" data-i18n="price.fine">Jadval va chegirmalar bo'yicha: 78 555 00 50.</p>
+  </div>
+</section>
+
+<!-- USTOZLAR -->
+<section class="sec teachers" id="ustozlar">
+  <div class="wrap">
+    <header class="sec__head">
+      <h2 data-i18n="t.title">Ustozlar</h2>
+      <p data-i18n="t.lead">Har bir guruhda asosiy ustoz va yordamchi ustoz ishlaydi. Suratni bossangiz, ustozning to'liq kartasi ochiladi.</p>
+    </header>
+    <div class="tgrid" id="tList"></div>
+  </div>
+</section>
+
+<!-- MARKAZ ICHIDAN -->
+<section class="sec inside" id="markaz">
+  <div class="wrap">
+    <header class="sec__head">
+      <h2 data-i18n="in.title">Markaz ichidan</h2>
+      <p data-i18n="in.lead">Instagram sahifamizdagi videolar: darslar, ustozlar va o'quvchilar bilan suhbat.</p>
+    </header>
+    <div class="vrow" id="vRow"></div>
+  </div>
+</section>
+
+<!-- FILIALLAR -->
+<section class="sec branches" id="filiallar">
+  <div class="wrap">
+    <header class="sec__head">
+      <h2 data-i18n="br.title">Filiallar</h2>
+      <p data-i18n="br.lead">Ikkala filial dushanbadan shanbagacha 09:00 dan 20:30 gacha ishlaydi.</p>
+    </header>
+    <div class="bgrid" id="brList"></div>
+  </div>
+</section>
+
+<!-- SAVOLLAR -->
+<section class="sec faq" id="savollar">
+  <div class="wrap faq__grid">
+    <header>
+      <h2 data-i18n="faq.title">Savollar</h2>
+      <p data-i18n="faq.ask">Javob topmasangiz, qo'ng'iroq qiling.</p>
+      <a class="bigtel" href="tel:+998785550050">78 555 00 50</a>
+    </header>
+    <div class="faq__list">
+      <details><summary data-i18n="faq.q1">Kafolat qanday ishlaydi?</summary><p data-i18n="faq.a1">IELTS kursi yakunida imtihondan 7.0 dan past ball olsangiz, to'lov qaytariladi. Aniq shartlar (davomat, uy vazifalari, imtihon muddati) shartnomada yoziladi. Ularni bepul konsultatsiyada batafsil so'rang.</p></details>
+      <details><summary data-i18n="faq.q2">Sinov darsi haqiqatan bepulmi?</summary><p data-i18n="faq.a2">Ha. Ariza qoldirasiz, administrator qo'ng'iroq qilib qulay vaqtni belgilaydi. Darsdan keyin darajangiz va mos guruh aytiladi.</p></details>
+      <details><summary data-i18n="faq.q3">Ikkinchi ustoz nima qiladi?</summary><p data-i18n="faq.a3">Yordamchi ustoz asosiy darsdan tashqari qo'shimcha practice o'tkazadi: speaking, writing tekshiruvi, tushunmagan mavzularni qayta tushuntirish.</p></details>
+      <details><summary data-i18n="faq.q4">IELTS kursiga qaysi darajadan kiriladi?</summary><p data-i18n="faq.a4">Hisob-kitobimizda Intermediate darajadan deb olingan. Darajangiz pastroq bo'lsa, avval General English yoki Intensive kursini o'tasiz. Aniq darajani sinov darsida belgilashadi.</p></details>
+      <details><summary data-i18n="faq.q5">Oyiga nechta dars bo'ladi?</summary><p data-i18n="faq.a5">General English, IELTS va Individual kurslarda oyiga 13–14 dars, Intensive kursda oyiga 24–26 dars.</p></details>
+      <details><summary data-i18n="faq.q6">Onlayn o'qish mumkinmi?</summary><p data-i18n="faq.a6">Ha, onlayn kurs ham bor: kompyuter, planshet yoki telefondan qo'shilasiz. Batafsil ma'lumotni administratordan oling.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- ARIZA -->
+<section class="sec lead" id="ariza">
+  <div class="wrap lead__grid">
+    <div class="lead__text">
+      <h2 data-i18n="lead.title">Bepul sinov darsiga yoziling</h2>
+      <p data-i18n="lead.lead">Darsda ustoz darajangizni aniqlaydi va mos guruhni aytadi. Hech narsa to'lamaysiz. Arizadan keyin administrator vaqt va filialni kelishib oladi.</p>
+      <p class="lead__or" data-i18n="lead.or">Yoki hozir qo'ng'iroq qiling:</p>
+      <a class="bigtel" href="tel:+998785550050">78 555 00 50</a>
+      <p class="lead__soc">
+        <a href="https://t.me/InnovationUz" target="_blank" rel="noopener">Telegram</a>
+        <a href="https://www.instagram.com/innovation_english_school" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://youtube.com/@innovation_english_school" target="_blank" rel="noopener">YouTube</a>
+        <a href="https://www.tiktok.com/@innovationuz" target="_blank" rel="noopener">TikTok</a>
+      </p>
+    </div>
+
+    <div class="lead__box">
+      <form class="lead__form" id="leadForm" novalidate>
+        <label class="fld"><span data-i18n="f.name">Ismingiz</span><input name="name" autocomplete="name" required></label>
+        <label class="fld"><span data-i18n="f.phone">Telefon raqam</span>
+          <span class="phone"><span>+998</span><input name="phone" type="tel" inputmode="numeric" autocomplete="tel-national" placeholder="90 123 45 67" required></span>
+        </label>
+        <label class="fld"><span><span data-i18n="f.user">Telegram username</span> <small class="opt" data-i18n="f.opt">ixtiyoriy</small></span>
+          <input name="username" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="@username">
+        </label>
+        <input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <div class="fld2">
+          <label class="fld"><span data-i18n="f.course">Kurs</span>
+            <select name="course" id="fCourse">
+              <option value="IELTS" data-i18n="c.ielts">IELTS kursi</option>
+              <option value="General English" data-i18n="c.general">General English</option>
+              <option value="Intensive" data-i18n="c.intensive">Intensive kurs</option>
+              <option value="Individual" data-i18n="c.individual">Individual kurs</option>
+              <option value="?" data-i18n="c.unsure">Hali bilmayman</option>
+            </select>
+          </label>
+          <label class="fld"><span data-i18n="f.branch">Filial</span>
+            <select name="branch">
+              <option value="Chilonzor">Chilonzor</option>
+              <option value="Qoraqamish">Qoraqamish</option>
+              <option value="Online" data-i18n="f.online">Onlayn</option>
+            </select>
+          </label>
+        </div>
+        <fieldset class="fld">
+          <legend data-i18n="f.time">Qulay vaqt</legend>
+          <div class="opts opts--sm">
+            <label><input type="radio" name="time" value="morning" checked><span data-i18n="time.m">Ertalab</span></label>
+            <label><input type="radio" name="time" value="day"><span data-i18n="time.d">Tushdan keyin</span></label>
+            <label><input type="radio" name="time" value="evening"><span data-i18n="time.e">Kechqurun</span></label>
+          </div>
+        </fieldset>
+        <label class="consent"><input type="checkbox" name="consent"><span data-i18n="f.consent">Telegram yoki telefon orqali bog'lanishlariga roziman</span></label>
+        <p class="lead__plan" id="fPlanView" hidden></p>
+        <p class="err" id="fErr" role="alert" hidden></p>
+        <button class="btn btn--yellow btn--full" type="submit" data-i18n="f.submit">Arizani yuborish</button>
+        <p class="note" data-i18n="f.fine">Raqamingiz faqat siz bilan bog'lanish uchun ishlatiladi.</p>
+      </form>
+
+      <div class="lead__done" id="leadDone" hidden tabindex="-1">
+        <h3 id="doneTitle">Arizangiz qabul qilindi</h3>
+        <p id="doneText">Tez orada administrator qo'ng'iroq qiladi.</p>
+        <pre class="done__msg" id="doneMsg"></pre>
+        <div class="done__btns">
+          <a class="btn btn--yellow" href="tel:+998785550050" data-i18n="done.call">Qo'ng'iroq qilish</a>
+          <button type="button" class="btn btn--line" id="copyMsg" data-i18n="done.copy">Matnni nusxalash</button>
+        </div>
+        <button type="button" class="link link--sm" id="newLead" data-i18n="done.again">Yangi ariza</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap foot__grid">
+    <img src="media/logo.webp" alt="Innovation English School" width="137" height="36" loading="lazy">
+    <p data-i18n="foot.tag">Ingliz tili va IELTS markazi, Toshkent.</p>
+    <p><a href="tel:+998785550050">78 555 00 50</a><br><span data-i18n="foot.hours">Dush–Shan, 09:00–20:30</span></p>
+    <p class="foot__note" data-i18n="foot.note">Konsept-dizayn. Rasmiy sayt: innovationschool.uz</p>
+  </div>
+</footer>
+
+<div class="mbar">
+  <a href="tel:+998785550050" class="mbar__call" data-i18n="mbar.call">Qo'ng'iroq</a>
+  <a href="#ariza" class="mbar__go" data-i18n="cta.trial">Sinov darsiga yozilish</a>
+</div>
+
+<dialog class="dlg" id="testDlg" aria-label="Daraja testi">
+  <div class="dlg__in">
+    <button type="button" class="dlg__x" data-close aria-label="Yopish">×</button>
+    <div id="testBody"></div>
+  </div>
+</dialog>
+
+<dialog class="dlg dlg--media" id="mediaDlg" aria-label="Media">
+  <button type="button" class="dlg__x" data-close aria-label="Yopish">×</button>
+  <div id="mediaBody"></div>
+</dialog>
+
+<script src="i18n.js?v=8"></script>
+<script src="app.js?v=8"></script>
+</body>
+</html>
