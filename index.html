@@ -6,7 +6,7 @@
 <meta name="robots" content="noindex">
 <title>Innovation English School: IELTS va ingliz tili, Toshkent</title>
 <meta name="description" content="Toshkentdagi ingliz tili va IELTS markazi. Har guruhda ikki ustoz, har oy progress test. IELTS 7.0 olmasangiz, to'lov qaytariladi.">
-<meta name="theme-color" content="#00342D">
+<meta name="theme-color" content="#061210">
 <!-- Arizalar serveri: masalan https://api.innovationschool.uz/lead (bo'sh = server ulanmagan) -->
 <meta name="lead-endpoint" content="">
 <meta property="og:title" content="Innovation English School">
@@ -14,15 +14,17 @@
 <meta property="og:image" content="media/v/dars.jpg">
 <link rel="icon" href="media/logo.webp">
 <link rel="preload" href="fonts/Geologica-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="media/c/tri-b.jpg" as="image">
 <link rel="stylesheet" href="fonts/fonts.css">
 <link rel="stylesheet" href="vendor/lenis.css">
-<link rel="stylesheet" href="style.css?v=9">
+<link rel="stylesheet" href="style.css?v=10">
 <script>document.documentElement.classList.add("js")</script>
 </head>
 <body>
 
 <a class="skip" href="#main">Asosiy qismga o'tish</a>
 <div class="progress" aria-hidden="true"><i></i></div>
+<div class="grain" aria-hidden="true"></div>
 <div class="cursor" aria-hidden="true"><span class="cursor__label"></span></div>
 
 <header class="top" id="nav">
@@ -52,12 +54,18 @@
 
 <main id="main">
 
-<!-- HERO -->
+<!-- HERO: uch kadrli kino ekran -->
 <section class="hero" data-theme="dark">
-  <div class="wrap hero__grid">
-    <div class="hero__copy">
+  <div class="hero__stage">
+    <div class="tri" aria-hidden="true">
+      <div class="tri__c tri__c--a"><video src="media/c/tri-a.mp4" poster="media/c/tri-a.jpg" autoplay muted loop playsinline preload="auto"></video></div>
+      <div class="tri__c tri__c--b"><video src="media/c/tri-b.mp4" poster="media/c/tri-b.jpg" autoplay muted loop playsinline preload="auto"></video></div>
+      <div class="tri__c tri__c--c"><video src="media/c/tri-c.mp4" poster="media/c/tri-c.jpg" autoplay muted loop playsinline preload="auto"></video></div>
+    </div>
+    <div class="hero__shade" aria-hidden="true"></div>
+    <div class="wrap hero__copy">
       <p class="kicker hero__kicker" data-i18n="hero.kicker">Ingliz tili va IELTS markazi · Toshkent</p>
-      <h1 class="hero__h1" data-split data-i18n="hero.h1">IELTS'dan <em>7.0</em> va&nbsp;undan yuqori. Olmasangiz, to'lovni qaytaramiz.</h1>
+      <h1 class="hero__h1"><span class="hero__l1" data-i18n="hero.l1">IELTS 7.0+</span> <em class="hero__l2" data-i18n="hero.l2">kafolat bilan</em></h1>
       <div class="hero__foot">
         <p class="hero__lead" data-i18n="hero.lead">Toshkentdagi ingliz tili markazi. Har guruhda ikki ustoz, Oxford University Press darsliklari, har oy progress test va bepul Mock imtihon.</p>
         <div class="hero__cta">
@@ -66,22 +74,20 @@
         </div>
       </div>
     </div>
-    <div class="hero__media">
-      <div class="hero__frame" data-cursor="play" data-video="dars">
-        <video src="media/v/hero.mp4" poster="media/v/dars.jpg" autoplay muted loop playsinline></video>
-      </div>
-      <p class="hero__cap"><span class="dot"></span><span data-i18n="hero.cap">Dars jarayoni, Innovation</span></p>
+    <div class="hero__promise" aria-hidden="true">
+      <p data-i18n="hero.promise">Olmasangiz, <em>to'lovni</em> qaytaramiz.</p>
+      <small data-i18n="hero.pnote">Kafolat shartlari shartnomada yoziladi</small>
     </div>
-  </div>
-  <div class="wrap hero__bar">
-    <span data-i18n="hero.b1">Chilonzor · Qoraqamish · Onlayn</span>
-    <span data-i18n="hero.b2">Dush–Shan, 09:00–20:30</span>
-    <span class="hero__scroll" data-i18n="hero.scroll">Pastga</span>
+    <div class="wrap hero__bar">
+      <span data-i18n="hero.b1">Chilonzor · Qoraqamish · Onlayn</span>
+      <span data-i18n="hero.b2">Dush–Shan, 09:00–20:30</span>
+      <span class="hero__scroll" data-i18n="hero.scroll">Pastga</span>
+    </div>
   </div>
 </section>
 
-<!-- MANIFEST -->
-<section class="sec manifest" data-theme="light">
+<!-- 01 MANIFEST -->
+<section class="sec manifest" data-theme="dark">
   <div class="wrap">
     <p class="kicker"><span class="idx">01</span> <span data-i18n="man.k">Yondashuv</span></p>
     <p class="manifest__text" data-words data-i18n="man.text">Biz ingliz tilini natija bilan o'lchaymiz. Har guruhda ikki ustoz ishlaydi, har oy progress test va Mock imtihon bo'ladi, IELTS'dagi 7.0 esa shartnomada yozilgan.</p>
@@ -94,15 +100,14 @@
   </div>
 </section>
 
-<!-- NATIJALAR: ball varag'i -->
-<section class="sec results" id="natijalar" data-theme="light">
+<!-- 02 NATIJALAR -->
+<section class="sec results" id="natijalar" data-theme="dark">
   <div class="wrap">
     <header class="sec__head">
       <p class="kicker"><span class="idx">02</span> <span data-i18n="nav.results">Natijalar</span></p>
       <h2 data-split data-i18n="res.title">O'quvchilarimizning IELTS natijalari</h2>
       <p class="sec__lead" data-i18n="res.lead">Ism ustiga bossangiz, asl Test Report Form ochiladi. Oxirgi qatorga o'z ballaringizni kiriting: umumiy ball rasmiy IELTS qoidasi bo'yicha hisoblanadi.</p>
     </header>
-
     <div class="sheet-wrap">
       <table class="sheet">
         <thead>
@@ -129,38 +134,54 @@
   <div class="peek" aria-hidden="true"><img alt=""></div>
 </section>
 
-<!-- IKKI USTOZ (pin) -->
-<section class="band" aria-label="Dars" data-theme="dark">
-  <div class="band__pin">
-    <div class="band__vid band__vid--a" data-cursor="play" data-video="ustozlar"><video src="media/v/loop-a.mp4" poster="media/v/loop-a.jpg" autoplay muted loop playsinline></video></div>
-    <div class="band__vid band__vid--b" data-cursor="play" data-video="speaking"><video src="media/v/loop-b.mp4" poster="media/v/loop-b.jpg" autoplay muted loop playsinline></video></div>
-    <div class="band__text">
-      <p class="kicker"><span class="idx">03</span> <span data-i18n="band.k">Dars formati</span></p>
-      <p class="band__big" data-words data-i18n="band.big">Har bir guruhda ikki ustoz.</p>
-      <p class="band__small" data-i18n="band.small">Biri darsni o'tadi, ikkinchisi siz bilan alohida speaking va writing qiladi.</p>
+<!-- 03 DASTUR: scroll bilan varaqlanadigan kitob -->
+<section class="books" id="dastur" data-theme="paper" aria-label="Oxford darsliklari">
+  <div class="books__pin">
+    <canvas class="books__cv" width="1280" height="720" aria-hidden="true"></canvas>
+    <div class="books__shade" aria-hidden="true"></div>
+    <div class="wrap books__in">
+      <p class="kicker"><span class="idx">03</span> <span data-i18n="bk.k">O'quv dasturi</span></p>
+      <div class="books__caps">
+        <p class="books__cap" data-i18n="bk.1">Oxford University Press <em>darsliklari.</em></p>
+        <p class="books__cap" data-i18n="bk.2">Student Book, Workbook, Vocabulary va Tests: har bir daraja uchun <em>to'liq to'plam.</em></p>
+        <p class="books__cap" data-i18n="bk.3">Har bir darajada <em>1000 dan ortiq</em> yangi so'z.</p>
+        <p class="books__cap" data-i18n="bk.4">Beginner'dan Upper-Intermediate'gacha, <em>keyin IELTS.</em></p>
+      </div>
+      <div class="books__prog" aria-hidden="true"><i></i></div>
     </div>
   </div>
 </section>
 
-<!-- QANDAY O'QITAMIZ -->
-<section class="sec how" id="nega" data-theme="light">
-  <div class="wrap how__grid">
-    <div class="how__side">
-      <p class="kicker"><span class="idx">04</span> <span data-i18n="nav.how">Qanday o'qitamiz</span></p>
-      <h2 data-split data-i18n="how.title">Qanday o'qitamiz</h2>
-      <div class="how__count" aria-hidden="true"><span class="how__cur">01</span><span class="how__tot">/04</span></div>
-      <button type="button" class="how__video" data-video="kafolat" data-cursor="play">
-        <img src="media/v/kafolat.jpg" alt="" loading="lazy">
-        <span><span class="play__i" aria-hidden="true"></span><span data-i18n="how.video">Kafolat haqida, 30 soniya</span></span>
-      </button>
-    </div>
-    <dl class="how__list">
-      <div class="how__item"><span class="how__n">01</span><dt data-i18n="how.t2">Kafolat shartnomada</dt><dd data-i18n="how.d2">IELTS kursidan keyin imtihonda 7.0 dan past olsangiz, to'lov qaytariladi. Davomat va uy vazifasi shartlari shartnomada yozilgan.</dd></div>
-      <div class="how__item"><span class="how__n">02</span><dt data-i18n="how.t3">Har oy o'lchov</dt><dd data-i18n="how.d3">Progress test va bepul Mock imtihon. Qayerda turganingizni oyma-oy raqamda ko'rasiz.</dd></div>
-      <div class="how__item"><span class="how__n">03</span><dt data-i18n="how.t4">Oxford darsliklari</dt><dd data-i18n="how.d4">Student Book, Workbook, Vocabulary va Tests. Har bir darajada 1000 dan ortiq yangi so'z.</dd></div>
-      <div class="how__item"><span class="how__n">04</span><dt data-i18n="how.t5">Yakshanba</dt><dd data-i18n="how.d5">Dars yo'q kuni tadbirlar va erkin speaking practice.</dd></div>
-    </dl>
+<!-- 04 QANDAY O'QITAMIZ: ustma-ust boblar -->
+<section class="chaps" id="nega" data-theme="dark">
+  <div class="wrap chaps__head">
+    <p class="kicker"><span class="idx">04</span> <span data-i18n="nav.how">Qanday o'qitamiz</span></p>
+    <h2 data-split data-i18n="how.title">Qanday o'qitamiz</h2>
   </div>
+  <article class="chap">
+    <div class="wrap chap__in">
+      <div class="chap__text"><span class="chap__n">01<i>/04</i></span><h3 data-i18n="band.big">Har bir guruhda ikki ustoz.</h3><p data-i18n="band.small">Biri darsni o'tadi, ikkinchisi siz bilan alohida speaking va writing qiladi.</p></div>
+      <div class="chap__media" data-cursor="play" data-video="ustozlar"><video src="media/c/ch-1.mp4" poster="media/c/ch-1.jpg" autoplay muted loop playsinline></video></div>
+    </div>
+  </article>
+  <article class="chap">
+    <div class="wrap chap__in">
+      <div class="chap__text"><span class="chap__n">02<i>/04</i></span><h3 data-i18n="how.t2">Kafolat shartnomada</h3><p data-i18n="how.d2">IELTS kursidan keyin imtihonda 7.0 dan past olsangiz, to'lov qaytariladi. Davomat va uy vazifasi shartlari shartnomada yozilgan.</p></div>
+      <div class="chap__media" data-cursor="play" data-video="kafolat"><video src="media/c/ch-2.mp4" poster="media/c/ch-2.jpg" autoplay muted loop playsinline></video></div>
+    </div>
+  </article>
+  <article class="chap">
+    <div class="wrap chap__in">
+      <div class="chap__text"><span class="chap__n">03<i>/04</i></span><h3 data-i18n="how.t3">Har oy o'lchov</h3><p data-i18n="how.d3">Progress test va bepul Mock imtihon. Qayerda turganingizni oyma-oy raqamda ko'rasiz.</p></div>
+      <div class="chap__media" data-cursor="play" data-video="dars"><video src="media/c/ch-3.mp4" poster="media/c/ch-3.jpg" autoplay muted loop playsinline></video></div>
+    </div>
+  </article>
+  <article class="chap">
+    <div class="wrap chap__in">
+      <div class="chap__text"><span class="chap__n">04<i>/04</i></span><h3 data-i18n="how.t5">Yakshanba</h3><p data-i18n="how.d5">Dars yo'q kuni tadbirlar va erkin speaking practice.</p></div>
+      <div class="chap__media" data-cursor="play" data-video="speaking"><video src="media/c/ch-4.mp4" poster="media/c/ch-4.jpg" autoplay muted loop playsinline></video></div>
+    </div>
+  </article>
 </section>
 
 <!-- REJA -->
@@ -247,10 +268,10 @@
 </section>
 
 <!-- MARKAZ ICHIDAN -->
-<section class="sec inside" id="markaz" data-theme="light">
+<section class="sec inside" id="markaz" data-theme="dark">
   <div class="wrap">
     <header class="sec__head">
-      <p class="kicker"><span class="idx">08</span> <span data-i18n="in.k">Video</span></p>
+      <p class="kicker"><span class="idx">08</span> <span data-i18n="in.k">Kinoteka</span></p>
       <h2 data-split data-i18n="in.title">Markaz ichidan</h2>
       <p class="sec__lead" data-i18n="in.lead">Instagram sahifamizdagi videolar: darslar, ustozlar va o'quvchilar bilan suhbat.</p>
     </header>
@@ -393,12 +414,12 @@
   <div id="mediaBody"></div>
 </dialog>
 
-<script src="i18n.js?v=9"></script>
-<script src="app.js?v=9"></script>
+<script src="i18n.js?v=10"></script>
+<script src="app.js?v=10"></script>
 <script src="vendor/gsap.min.js"></script>
 <script src="vendor/ScrollTrigger.min.js"></script>
 <script src="vendor/SplitText.min.js"></script>
 <script src="vendor/lenis.min.js"></script>
-<script src="motion.js?v=9"></script>
+<script src="motion.js?v=10"></script>
 </body>
 </html>
