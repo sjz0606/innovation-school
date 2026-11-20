@@ -207,7 +207,7 @@ function renderResults(){
   const d = D();
   $("#resBody").innerHTML = RESULTS.map(r => {
     const o = overall(r.b); const [fam, first] = r.n.split(" ");
-    return `<tr><th scope="row" class="sheet__name"><button type="button" class="sname" data-img="media/r/${r.id}.webp" aria-label="${r.n}: ${d.seeCert}"><span>${first}</span><small>${fam}</small></button></th>
+    return `<tr><th scope="row" class="sheet__name"><button type="button" class="sname" data-cursor="view" data-img="media/r/${r.id}.webp" aria-label="${r.n}: ${d.seeCert}"><span>${first}</span><small>${fam}</small></button></th>
       ${r.b.map(x=>`<td>${bandStr(x)}</td>`).join("")}<td class="sheet__ov">${bandStr(o.r)}</td></tr>`;
   }).join("");
   const avg = i => (RESULTS.reduce((a,r)=>a+r.b[i],0)/RESULTS.length).toFixed(1);
@@ -235,9 +235,9 @@ function renderCalc(){
 /* ---------- Ustozlar ---------- */
 function renderTeachers(){
   const d = D();
-  $("#tList").innerHTML = TEACHERS.map(t => `<button type="button" class="tcard" data-id="${t.id}">
-    <span class="tcard__ph"><img src="media/tp/${t.id}.webp" alt="${t.n}" loading="lazy" width="520" height="520"></span>
-    <h3>${t.n}</h3>
+  $("#tList").innerHTML = TEACHERS.map(t => `<button type="button" class="tcard" data-id="${t.id}" data-cursor="view">
+    <span class="tcard__ph"><span class="tcard__no">${String(TEACHERS.indexOf(t)+1).padStart(2,"0")}</span><img src="media/tp/${t.id}.webp" alt="${t.n}" loading="lazy" width="520" height="520"></span>
+    <h3>${t.n}</h3><small class="tcard__tr">${t.tr[lang]}</small>
     <p>${t.exp} ${d.exp}, ${fmt(t.stu)}+ ${d.stu}${t.cert?`<br>${t.cert}`:""}</p>
   </button>`).join("");
   $$("#tList .tcard").forEach(b => b.addEventListener("click", () => openMedia(`<img src="media/t/${b.dataset.id}.webp" alt="">`)));
@@ -246,8 +246,8 @@ function renderTeachers(){
 /* ---------- Videolar ---------- */
 function renderVideos(){
   const d = D();
-  $("#vRow").innerHTML = VIDEOS.map(v => `<button type="button" class="vthumb" data-video="${v}">
-    <img src="media/v/${v}.jpg" alt="" loading="lazy"><span>${d.vids[v]}</span></button>`).join("");
+  $("#vRow").innerHTML = VIDEOS.map(v => `<button type="button" class="vthumb" data-video="${v}" data-cursor="play">
+    <span class="vthumb__m"><img src="media/v/${v}.jpg" alt="" loading="lazy"></span><span data-n="${String(VIDEOS.indexOf(v)+1).padStart(2,"0")}">${d.vids[v]}</span></button>`).join("");
 }
 document.addEventListener("click", e => {
   const b = e.target.closest("[data-video]"); if (!b) return;
@@ -274,7 +274,7 @@ function branchStatus(){
 function renderBranches(){
   const d = D(), s = branchStatus();
   $("#brList").innerHTML = BRANCHES.map(b => `<article class="bcard">
-    <img src="${b.img}" alt="${b.n}" loading="lazy">
+    <span class="bcard__m"><img src="${b.img}" alt="${b.n}" loading="lazy"></span>
     <div class="bcard__body">
       <h3>${b.n}</h3>
       <span class="status ${s.open?"is-open":""}">${s.txt}</span>
@@ -360,6 +360,7 @@ $$("dialog").forEach(dl => {
 /* ---------- Ishga tushirish ---------- */
 function renderAll(){
   renderPlan(); renderPrices(); renderResults(); renderCalc(); renderTeachers(); renderVideos(); renderBranches();
+  document.dispatchEvent(new CustomEvent("ies:render"));
 }
 buildCalc();
 applyLang();
